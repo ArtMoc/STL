@@ -96,6 +96,10 @@ void main()
 	vec.erase(vec.begin() + index, vec.begin() + index + count);
 	print(vec);
 
+	cout << "\n--------------------------------------------\n";
+	vec.swap(powers);
+	print(vec);
+	print(powers);
 
 #endif // STL_VECTOR
 
