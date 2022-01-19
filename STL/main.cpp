@@ -1,16 +1,21 @@
 #include <iostream>
 #include <array>
 #include <vector>
-using namespace std;
+#include<deque>
+//using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 #define tab "\t"
 
 //#define STL_ARRAY
-#define STL_VECTOR
+//#define STL_VECTOR
+//#define STL_DEQUE
 
 template<typename T>
-void print(const vector<T>& vec)
+void print(const std::vector<T>& vec)
 {
-	for (typename vector<T>::const_iterator it = vec.begin(); it != vec.end(); it++)
+	for (typename std::vector<T>::const_iterator it = vec.begin(); it != vec.end(); it++)
 	{
 		cout << *it << tab;
 	}
@@ -102,5 +107,27 @@ void main()
 	print(powers);
 
 #endif // STL_VECTOR
+
+
+#ifdef STL_DEQUE
+	std::deque<int> deque = { 3,5,8,13,21 };
+	deque.push_back(34);
+	deque.push_back(55);
+	deque.push_back(89);
+	deque.push_front(2);
+	deque.push_front(1);
+	deque.push_front(1);
+	deque.push_front(0);
+	for (int i = 0; i < deque.size(); i++)
+	{
+		cout << deque[i] << tab;
+	}
+	cout << endl;
+
+	std::deque<int> d_powers = { 256,512,768 };
+	//deque.push_back(*(d_powers.begin() + 1));
+	for (int i : deque)cout << i << tab;cout << endl;
+	for (int i : d_powers)cout << i << tab;cout << endl;
+#endif // STL_DEQUE
 
 }
