@@ -7,6 +7,15 @@ using namespace std;
 //#define STL_ARRAY
 #define STL_VECTOR
 
+template<typename T>
+void print(const vector<T>& vec)
+{
+	for (typename vector<T>::const_iterator it = vec.begin(); it != vec.end(); it++)
+	{
+		cout << *it << tab;
+	}
+	cout << endl;
+}
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -60,6 +69,33 @@ void main()
 	cout << "Capacity: " << vec2.capacity() << endl; //есть только у вектора
 	cout << "MaxSize:  " << vec2.max_size() << endl;
 	cout << sizeof(vec2) << " byte" << endl;*/
+
+
+	int index;
+	int value;
+	int count;
+	cout << "¬ведите индекс добавл€емого элемента:\t";cin >> index;
+	cout << "¬ведите количество добавлений:\t\t";cin >> count;
+	cout << "¬ведите значение добавл€емого элемента:\t";cin >> value;
+	//                      insert(position, count, value)
+	if (index < vec.size())vec.insert(vec.begin() + index, count, value);
+	else cout << "Error: out of range" << endl;
+	print(vec);
+
+	std::vector<int>powers = { 1024,2048,4096,8192,16384 };
+
+	//vec.insert(vec.begin() + 4, powers.begin(), powers.end());
+	vec.insert(vec.begin() + 8, { 256, 384, 512, 768 });
+	for (int i : vec)cout << i << tab;cout << endl;
+
+	/*vec.insert(vec.begin() + 4, vec.begin()+15, vec.begin()+17);
+	for (int i:vec)cout << i << tab;cout << endl;*/
+
+	cout << "¬ведите индекс удал€емого элемента:\t";cin >> index;
+	cout << "¬ведите количество удалений:\t\t";cin >> count;
+	vec.erase(vec.begin() + index, vec.begin() + index + count);
+	print(vec);
+
 
 #endif // STL_VECTOR
 
