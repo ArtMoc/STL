@@ -70,13 +70,14 @@ void main()
 	cout << "MaxSize:  " << vec2.max_size() << endl;
 	cout << sizeof(vec2) << " byte" << endl;*/
 
+
 	int index;
 	int value;
 	int count;
 	cout << "Введите индекс добавляемого элемента:\t";cin >> index;
 	cout << "Введите количество добавлений:\t\t";cin >> count;
 	cout << "Введите значение добавляемого элемента:\t";cin >> value;
-//                      insert(position, count, value)
+	//                      insert(position, count, value)
 	if (index < vec.size())vec.insert(vec.begin() + index, count, value);
 	else cout << "Error: out of range" << endl;
 	print(vec);
@@ -92,8 +93,9 @@ void main()
 
 	cout << "Введите индекс удаляемого элемента:\t";cin >> index;
 	cout << "Введите количество удалений:\t\t";cin >> count;
-	vec.erase(vec.begin() + index, vec.begin()+index+count);
+	vec.erase(vec.begin() + index, vec.begin() + index + count);
 	print(vec);
+
 
 #endif // STL_VECTOR
 
