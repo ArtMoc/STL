@@ -28,15 +28,26 @@ void main()
 	cout << "MaxSize:  " << vec.max_size() << endl;
 	cout << sizeof(vec) << " byte" << endl;
 
+	int* data = vec.data();
 	vec.push_back(55);
-	vec.push_back(555);
+	data = vec.data();
+	vec.push_back(89);
 
-	for (int i = 0; i < vec.size(); i++)
+	try
 	{
-		//cout << vec[i] << tab;
-		cout << vec.at(i)  << tab;
+		for (int i = 0; i < vec.capacity(); i++)
+		{
+			//cout << vec[i] << tab;
+			//cout << *(data + i) << tab;
+			cout << vec.at(i) << tab;
+		}
+		cout << endl;
+		//subscript - индексирование
 	}
-	cout << endl;
+	catch (const std::exception& e)
+	{
+		cerr << e.what() << endl;
+	}
 
 	cout << "Size:     " << vec.size() << endl;
 	cout << "Capacity: " << vec.capacity() << endl; //есть только у вектора
@@ -49,6 +60,7 @@ void main()
 	cout << "Capacity: " << vec2.capacity() << endl; //есть только у вектора
 	cout << "MaxSize:  " << vec2.max_size() << endl;
 	cout << sizeof(vec2) << " byte" << endl;*/
+
 #endif // STL_VECTOR
 
 }
