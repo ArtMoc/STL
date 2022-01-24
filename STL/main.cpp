@@ -13,6 +13,8 @@ using std::endl;
 //#define STL_ARRAY
 //#define STL_VECTOR
 //#define STL_DEQUE
+#define STL_LIST_1
+//#define STL_LIST_2
 //#define FORWARD_LIST
 
 template<typename T>
@@ -132,6 +134,42 @@ void main()
 	for (int i : deque)cout << i << tab;cout << endl;
 	for (int i : d_powers)cout << i << tab;cout << endl;
 #endif // STL_DEQUE
+
+#ifdef STL_LIST_1
+	std::list<int> list = { 3,5,8,13,21 };
+	for (int i : list)cout << i << tab; cout << endl;
+	int index;
+	int value;
+	int count;
+	do
+	{
+		cout << "¬ведите индекс добавл€емого значени€: "; cin >> index;
+		if (index > list.size())cout << "¬ведите другое значение\n";
+	} while (index > list.size());
+	cout << "¬ведите количество добавлений: "; cin >> count;
+	cout << "¬ведите добавл€емое значение: "; cin >> value;
+	std::list<int>::iterator position = list.begin();
+	for (int i = 0; i < index; i++)position++;
+	list.insert(position, count, value);
+	for (int i : list)cout << i << tab; cout << endl;
+#endif // STL_LIST_1
+
+#ifdef STL_LIST_2
+	std::list<int> list = { 3,5,8,13,21 };
+	for (int i : list)cout << i << tab; cout << endl;
+	int index;
+	do
+	{
+		cout << "¬ведите индекс удал€емого значени€: "; cin >> index;
+		if (index >= list.size())cout << "¬ведите другое значение\n";
+	} while (index >= list.size());
+	std::list<int>::iterator position = list.begin();
+	for (int i = 0; i < index; i++)position++;
+	list.erase(position);
+	for (int i : list)cout << i << tab; cout << endl;
+#endif // STL_LIST_2
+
+
 
 #ifdef FORWARD_LIST
 	std::forward_list<int> list = { 3,5,8,13,21 };
