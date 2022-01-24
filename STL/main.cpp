@@ -2,6 +2,8 @@
 #include <array>
 #include <vector>
 #include<deque>
+#include <forward_list>
+#include<list>
 //using namespace std;
 using std::cin;
 using std::cout;
@@ -11,6 +13,7 @@ using std::endl;
 //#define STL_ARRAY
 //#define STL_VECTOR
 //#define STL_DEQUE
+//#define FORWARD_LIST
 
 template<typename T>
 void print(const std::vector<T>& vec)
@@ -129,5 +132,28 @@ void main()
 	for (int i : deque)cout << i << tab;cout << endl;
 	for (int i : d_powers)cout << i << tab;cout << endl;
 #endif // STL_DEQUE
+
+#ifdef FORWARD_LIST
+	std::forward_list<int> list = { 3,5,8,13,21 };
+	list.push_front(123);
+	/*std::forward_list<int>::iterator it = list.begin();
+	for(int i = 0; i < list.)*/
+	//list.insert_after(list.end(), 1024);
+	for (std::forward_list<int>::iterator it = list.begin(); it != list.end(); it++)
+	{
+		cout << *it << tab;
+	}
+	cout << endl;
+	list.reverse();
+	list.push_front(1024);
+	list.reverse();
+	for (int i : list)cout << i << tab; cout << endl;
+
+	std::list<int> list2;
+
+	cout << "Forward_List max size:\t" << list.max_size() << endl;
+	cout << "List max size:\t\t" << list2.max_size() << endl;
+#endif // FORWARD_LIST
+
 
 }
