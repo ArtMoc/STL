@@ -20,21 +20,21 @@ std::pair<int, std::string>(5, "Пересечение сплошной линии")
 
 class Crime
 {
-	std::string crime;
+	int crime_id;
 	std::string place;
 public:
-	const std::string& get_crime()const
+	int get_crime()const
 	{
-		return crime;
+		return crime_id;
 	}
 	const std::string& get_place()const
 	{
-		return crime;
+		return place;
 	}
 	Crime(){}
-	Crime(const std::string& crime, const std::string& place)
+	Crime(int crime_id, const std::string& place)
 	{
-		this->crime = crime;
+		this->crime_id = crime_id;
 		this->place = place;
 	}
 	~Crime()
@@ -43,12 +43,13 @@ public:
 	}
 	std::ostream& print(std::ostream& os)const
 	{
-		return os << crime << ", " << place;
+		return os << crimes.at(crime_id) << ", " << place;
 	}
 	std::istream& scan(std::istream& is)
 	{
 		is.ignore(); //Игнорирует 1 символ из буфера ввода(в данном случае "\n").
-		std::getline(is, crime, ',');
+		//std::getline(is, crime_id, ',');
+		cin >> crime_id;
 		std::getline(is, place);
 		return is;
 	}
@@ -72,10 +73,11 @@ void main()
 	SetConsoleOutputCP(1251);
 	std::map<std::string, std::list<Crime>> base =
 	{
-		std::pair<std::string, std::list<Crime>>("m777ko", std::list<Crime>{Crime("Превышение скорости", "улица Ленина"),Crime("Проезд на красный", "улица Октябрьская")}),
-		std::pair<std::string, std::list<Crime>>("b510ma", std::list<Crime>{Crime("Парковка в неположенном месте", "ТЦ Экватор")}),
-		std::pair<std::string, std::list<Crime>>("a213bb", std::list<Crime>{Crime("Оскорбление офицера", "Красная площадь")})
+		std::pair<std::string, std::list<Crime>>("m777ko", std::list<Crime>{Crime(1, "улица Ленина"),Crime(2, "улица Октябрьская")}),
+		std::pair<std::string, std::list<Crime>>("b510ma", std::list<Crime>{Crime(3, "ТЦ Экватор")}),
+		std::pair<std::string, std::list<Crime>>("a213bb", std::list<Crime>{Crime(4, "Красная площадь")})
 	};
+
 	/*for (std::list<Crime>::iterator it = base["m777ko"].begin(); it != base["m777ko"].end(); ++it)
 	{
 		cout << *it << endl;
