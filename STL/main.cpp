@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <array>
 #include <vector>
 #include<deque>
@@ -43,7 +43,7 @@ void main()
 #ifdef STL_VECTOR
 	vector<int> vec = { 0,1,1,2,3,5,8,13,21,34,55,89,144,232, };
 	cout << "Size:     " << vec.size() << endl;
-	cout << "Capacity: " << vec.capacity() << endl; //åñòü òîëüêî ó âåêòîðà
+	cout << "Capacity: " << vec.capacity() << endl; //ÐµÑÑ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñƒ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð°
 	cout << "MaxSize:  " << vec.max_size() << endl;
 	cout << sizeof(vec) << " byte" << endl;
 
@@ -61,7 +61,7 @@ void main()
 			cout << vec.at(i) << tab;
 		}
 		cout << endl;
-		//subscript - èíäåêñèðîâàíèå
+		//subscript - Ð¸Ð½Ð´ÐµÐºÑÐ¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ
 	}
 	catch (const std::exception& e)
 	{
@@ -69,14 +69,14 @@ void main()
 	}
 
 	cout << "Size:     " << vec.size() << endl;
-	cout << "Capacity: " << vec.capacity() << endl; //åñòü òîëüêî ó âåêòîðà
+	cout << "Capacity: " << vec.capacity() << endl; //ÐµÑÑ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñƒ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð°
 	cout << "MaxSize:  " << vec.max_size() << endl;
 	cout << sizeof(vec) << " byte" << endl;
 
 
 	/*vector<vector<int>> vec2;
 	cout << "Size:     " << vec2.size() << endl;
-	cout << "Capacity: " << vec2.capacity() << endl; //åñòü òîëüêî ó âåêòîðà
+	cout << "Capacity: " << vec2.capacity() << endl; //ÐµÑÑ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñƒ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð°
 	cout << "MaxSize:  " << vec2.max_size() << endl;
 	cout << sizeof(vec2) << " byte" << endl;*/
 
@@ -84,9 +84,9 @@ void main()
 	int index;
 	int value;
 	int count;
-	cout << "Ââåäèòå èíäåêñ äîáàâëÿåìîãî ýëåìåíòà:\t";cin >> index;
-	cout << "Ââåäèòå êîëè÷åñòâî äîáàâëåíèé:\t\t";cin >> count;
-	cout << "Ââåäèòå çíà÷åíèå äîáàâëÿåìîãî ýëåìåíòà:\t";cin >> value;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°:\t";cin >> index;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ð¹:\t\t";cin >> count;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°:\t";cin >> value;
 	//                      insert(position, count, value)
 	if (index < vec.size())vec.insert(vec.begin() + index, count, value);
 	else cout << "Error: out of range" << endl;
@@ -101,8 +101,8 @@ void main()
 	/*vec.insert(vec.begin() + 4, vec.begin()+15, vec.begin()+17);
 	for (int i:vec)cout << i << tab;cout << endl;*/
 
-	cout << "Ââåäèòå èíäåêñ óäàëÿåìîãî ýëåìåíòà:\t";cin >> index;
-	cout << "Ââåäèòå êîëè÷åñòâî óäàëåíèé:\t\t";cin >> count;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ ÑƒÐ´Ð°Ð»ÑÐµÐ¼Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°:\t";cin >> index;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ð¹:\t\t";cin >> count;
 	vec.erase(vec.begin() + index, vec.begin() + index + count);
 	print(vec);
 
@@ -143,11 +143,11 @@ void main()
 	int count;
 	do
 	{
-		cout << "Ââåäèòå èíäåêñ äîáàâëÿåìîãî çíà÷åíèÿ: "; cin >> index;
-		if (index > list.size())cout << "Ââåäèòå äðóãîå çíà÷åíèå\n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ð¾Ð³Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: "; cin >> index;
+		if (index > list.size())cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ\n";
 	} while (index > list.size());
-	cout << "Ââåäèòå êîëè÷åñòâî äîáàâëåíèé: "; cin >> count;
-	cout << "Ââåäèòå äîáàâëÿåìîå çíà÷åíèå: "; cin >> value;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ð¹: "; cin >> count;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: "; cin >> value;
 	std::list<int>::iterator position = list.begin();
 	for (int i = 0; i < index; i++)position++;
 	list.insert(position, count, value);
@@ -160,8 +160,8 @@ void main()
 	int index;
 	do
 	{
-		cout << "Ââåäèòå èíäåêñ óäàëÿåìîãî çíà÷åíèÿ: "; cin >> index;
-		if (index >= list.size())cout << "Ââåäèòå äðóãîå çíà÷åíèå\n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ ÑƒÐ´Ð°Ð»ÑÐµÐ¼Ð¾Ð³Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: "; cin >> index;
+		if (index >= list.size())cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ\n";
 	} while (index >= list.size());
 	std::list<int>::iterator position = list.begin();
 	for (int i = 0; i < index; i++)position++;
