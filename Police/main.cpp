@@ -9,7 +9,6 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-#define tab "\t"
 
 const std::map<int, std::string>& crimes =
 {
@@ -37,7 +36,7 @@ public:
 	{
 		return place;
 	}
-	Crime(){}
+	Crime() {}
 	Crime(int crime_id, const std::string& place)
 	{
 		this->crime_id = crime_id;
@@ -53,7 +52,7 @@ public:
 	}
 	std::ofstream& print(std::ofstream& os)const
 	{
-		os << crime_id << " " << place;
+		os << crime_id /*<< " " */<< place;
 		return os;
 	}
 	std::istream& scan(std::istream& is)
@@ -66,7 +65,7 @@ public:
 	}
 	std::ifstream& scan(std::ifstream& is)
 	{
-		//is.ignore(); //Игнорирует 1 символ из буфера ввода(в данном случае "\n").
+		is.ignore(); //Игнорирует 1 символ из буфера ввода(в данном случае "\n").
 		//std::getline(is, crime_id, ',');
 		cin >> crime_id;
 		std::getline(is, place);
