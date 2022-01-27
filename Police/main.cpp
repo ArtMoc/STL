@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <fstream>
 #include <map>
 #include <string>
@@ -12,11 +12,11 @@ using std::endl;
 
 const std::map<int, std::string>& crimes =
 {
-std::pair<int, std::string>(1, "Превышение скорости"),
-std::pair<int, std::string>(2, "Проезд на красный"),
-std::pair<int, std::string>(3, "Парковка в неположенном месте"),
-std::pair<int, std::string>(4, "Оскорбление офицера"),
-std::pair<int, std::string>(5, "Пересечение сплошной линии")
+std::pair<int, std::string>(1, "РџСЂРµРІС‹С€РµРЅРёРµ СЃРєРѕСЂРѕСЃС‚Рё"),
+std::pair<int, std::string>(2, "РџСЂРѕРµР·Рґ РЅР° РєСЂР°СЃРЅС‹Р№"),
+std::pair<int, std::string>(3, "РџР°СЂРєРѕРІРєР° РІ РЅРµРїРѕР»РѕР¶РµРЅРЅРѕРј РјРµСЃС‚Рµ"),
+std::pair<int, std::string>(4, "РћСЃРєРѕСЂР±Р»РµРЅРёРµ РѕС„РёС†РµСЂР°"),
+std::pair<int, std::string>(5, "РџРµСЂРµСЃРµС‡РµРЅРёРµ СЃРїР»РѕС€РЅРѕР№ Р»РёРЅРёРё")
 };
 
 class Crime
@@ -57,7 +57,7 @@ public:
 	}
 	std::istream& scan(std::istream& is)
 	{
-		is.ignore(); //Игнорирует 1 символ из буфера ввода(в данном случае "\n").
+		is.ignore(); //РРіРЅРѕСЂРёСЂСѓРµС‚ 1 СЃРёРјРІРѕР» РёР· Р±СѓС„РµСЂР° РІРІРѕРґР°(РІ РґР°РЅРЅРѕРј СЃР»СѓС‡Р°Рµ "\n").
 		//std::getline(is, crime_id, ',');
 		cin >> crime_id;
 		std::getline(is, place);
@@ -65,7 +65,7 @@ public:
 	}
 	std::ifstream& scan(std::ifstream& is)
 	{
-		is.ignore(); //Игнорирует 1 символ из буфера ввода(в данном случае "\n").
+		is.ignore(); //РРіРЅРѕСЂРёСЂСѓРµС‚ 1 СЃРёРјРІРѕР» РёР· Р±СѓС„РµСЂР° РІРІРѕРґР°(РІ РґР°РЅРЅРѕРј СЃР»СѓС‡Р°Рµ "\n").
 		//std::getline(is, crime_id, ',');
 		cin >> crime_id;
 		std::getline(is, place);
@@ -97,9 +97,9 @@ void main()
 	SetConsoleOutputCP(1251);
 	std::map<std::string, std::list<Crime>> base;  /*=
 	{
-		std::pair<std::string, std::list<Crime>>("m777ko", std::list<Crime>{Crime(1, "улица Ленина"),Crime(2, "улица Октябрьская")}),
-		std::pair<std::string, std::list<Crime>>("b510ma", std::list<Crime>{Crime(3, "ТЦ Экватор")}),
-		std::pair<std::string, std::list<Crime>>("a213bb", std::list<Crime>{Crime(4, "Красная площадь")})
+		std::pair<std::string, std::list<Crime>>("m777ko", std::list<Crime>{Crime(1, "СѓР»РёС†Р° Р›РµРЅРёРЅР°"),Crime(2, "СѓР»РёС†Р° РћРєС‚СЏР±СЂСЊСЃРєР°СЏ")}),
+		std::pair<std::string, std::list<Crime>>("b510ma", std::list<Crime>{Crime(3, "РўР¦ Р­РєРІР°С‚РѕСЂ")}),
+		std::pair<std::string, std::list<Crime>>("a213bb", std::list<Crime>{Crime(4, "РљСЂР°СЃРЅР°СЏ РїР»РѕС‰Р°РґСЊ")})
 	};*/
 
 	//load(base);
@@ -111,8 +111,8 @@ void main()
 
 	/*std::string licence_plate;
 	Crime crime;
-	cout << "Введите номер автомобиля: "; cin >> licence_plate;
-	cout << "Введите правонарушение: "; cin >> crime;
+	cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р°РІС‚РѕРјРѕР±РёР»СЏ: "; cin >> licence_plate;
+	cout << "Р’РІРµРґРёС‚Рµ РїСЂР°РІРѕРЅР°СЂСѓС€РµРЅРёРµ: "; cin >> crime;
 	base[licence_plate].push_back(crime);*/
 	//save(base);
 	//print(base);
@@ -121,11 +121,11 @@ void main()
 	do
 	{
 		system("CLS");
-		cout << "Выбирите действие: " << endl;
-		cout << "1. Загрузить базу: " << endl;
-		cout << "2. Сохранить базу: " << endl;
-		cout << "3. Вывести базу: " << endl;
-		cout << "4. Добавить запись: " << endl;
+		cout << "Р’С‹Р±РёСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ: " << endl;
+		cout << "1. Р—Р°РіСЂСѓР·РёС‚СЊ Р±Р°Р·Сѓ: " << endl;
+		cout << "2. РЎРѕС…СЂР°РЅРёС‚СЊ Р±Р°Р·Сѓ: " << endl;
+		cout << "3. Р’С‹РІРµСЃС‚Рё Р±Р°Р·Сѓ: " << endl;
+		cout << "4. Р”РѕР±Р°РІРёС‚СЊ Р·Р°РїРёСЃСЊ: " << endl;
 		action = _getch();
 		cout << action << endl;
 		switch (action)
@@ -137,8 +137,8 @@ void main()
 		{
 			std::string licence_plate;
 			Crime crime;
-			cout << "Введите номер автомобиля: "; cin >> licence_plate;
-			cout << "Введите правонарушение: "; cin >> crime;
+			cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р°РІС‚РѕРјРѕР±РёР»СЏ: "; cin >> licence_plate;
+			cout << "Р’РІРµРґРёС‚Рµ РїСЂР°РІРѕРЅР°СЂСѓС€РµРЅРёРµ: "; cin >> crime;
 			base[licence_plate].push_back(crime);
 		}
 		break;
@@ -169,7 +169,7 @@ void print(const std::map<std::string, std::list<Crime>>& base)
 		{
 			fout << *l_it << ", ";
 		}
-		fout.seekp(-2, std::ios_base::cur);//сдвигаем курсор на два символа влево относительно текущей позиции
+		fout.seekp(-2, std::ios_base::cur);//СЃРґРІРёРіР°РµРј РєСѓСЂСЃРѕСЂ РЅР° РґРІР° СЃРёРјРІРѕР»Р° РІР»РµРІРѕ РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ С‚РµРєСѓС‰РµР№ РїРѕР·РёС†РёРё
 		fout << ";\n";
 	}
 	fout.close();
